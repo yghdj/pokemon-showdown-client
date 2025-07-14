@@ -31,7 +31,7 @@
 					this.curTeam.dex = Dex.mod('gen8bdsp');
 				}
 				if (this.curTeam.format.includes('pojemo')) {
-					this.curTeam.dex = Dex.mod('pojemo');
+					this.curTeam.dex = Dex.mod('gen9pojemo');
 				}
 				Storage.activeSetList = this.curSetList;
 			}

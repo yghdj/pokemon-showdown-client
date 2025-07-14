@@ -9,7 +9,7 @@ const rootDir = path.resolve(__dirname, '..');
 process.chdir(rootDir);
 
 if (!fs.existsSync('caches/pokemon-showdown')) {
-	child_process.execSync('git clone https://github.com/yghdj/pokemon-showdown.git -b yghdj/master', {
+	child_process.execSync('git clone https://github.com/yghdj/pokemon-showdown.git -b yghdj/develop_21', {
 		cwd: 'caches',
 	});
 }
@@ -284,7 +284,7 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 			if (isSSDLC1) genStr += 'dlc1';
 			if (isLetsGo) genStr += 'letsgo';
 			if (isBDSP) genStr += 'bdsp';
-			if (isPojemo) genStr = 'pojemo';
+			if (isPojemo) genStr += 'pojemo';
 			if (isPreDLC) genStr += 'predlc';
 			if (isSVDLC1) genStr += 'dlc1';
 			if (isStadium) genStr += 'stadium' + (genNum > 1 ? genNum : '');
@@ -1132,7 +1132,7 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 			}
 		}
 	}
-	const PojemoLearnsets = Dex.mod('pojemo').data.Learnsets;
+	const PojemoLearnsets = Dex.mod('gen9pojemo').data.Learnsets;
 	// XXX: do something here?
 
 	// Client relevant data that should be overriden by past gens and mods
@@ -1231,7 +1231,7 @@ process.stdout.write("Building `data/teambuilder-tables.js`... ");
 	// Mods
 	//
 
-	for (const mod of ['gen3rs', 'gen5bw1', 'gen7letsgo', 'gen8bdsp', 'gen9ssb', 'pojemo']) {
+	for (const mod of ['gen3rs', 'gen5bw1', 'gen7letsgo', 'gen8bdsp', 'gen9ssb', 'gen9pojemo']) {
 		const modDex = Dex.mod(mod);
 		const modData = modDex.data;
 		const parentDex = Dex.forGen(modDex.gen);
