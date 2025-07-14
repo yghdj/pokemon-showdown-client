@@ -1063,6 +1063,8 @@ export class ModdedDex {
 
 	species = {
 		get: (name: string): Species => {
+			console.log("Get species for mod: {}", this.modid);
+
 			let id = toID(name);
 			if (window.BattleAliases && id in BattleAliases) {
 				name = BattleAliases[id];
