@@ -271,6 +271,8 @@ export const Dex = new class implements ModdedDex {
 		return parseInt(formatid.charAt(3)) || Dex.gen;
 	}
 	forFormat(format: string) {
+		console.log("Dex for gen:" + format)
+
 		let dex = Dex.forGen(Dex.formatGen(format));
 
 		const formatid = toID(format).slice(4);
@@ -279,6 +281,9 @@ export const Dex = new class implements ModdedDex {
 		}
 		if (dex.gen === 8 && formatid.includes('bdsp')) {
 			dex = Dex.mod('gen8bdsp' as ID);
+		}
+		if (dex.gen === 9 && formatid.includes('pojemo')) {
+			dex = Dex.mod('gen9pojemo' as ID);
 		}
 		return dex;
 	}
